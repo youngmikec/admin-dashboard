@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'admin', pathMatch: 'full' },
   { path: 'admin', loadChildren: './people-manager/admin/admin.module#AdminModule' },
   { path: 'user', loadChildren: './people-manager/user/user.module#UserModule' },
-  { path: 'upgrade', loadChildren: './people-manager/upgrade/upgrade.module#UpgradeModule' },
+  // { path: 'upgrade', loadChildren: './people-manager/upgrade/upgrade.module#UpgradeModule' },
 
 ];
 

@@ -7,7 +7,7 @@ import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { Subscription, Observable } from 'rxjs';
 import PerfectScrollbar from 'perfect-scrollbar';
 
-import { Parcels, Admins } from '../../providers';
+import { Admins } from '../../providers';
 
 @Component({
     selector: 'app-admin-layout',
@@ -22,7 +22,6 @@ export class AdminLayoutComponent implements OnInit, AfterViewInit {
 
     constructor(public location: Location,
         private router: Router,
-        private Parcels: Parcels,
         private admins: Admins) { }
 
     ngOnInit() {
@@ -65,7 +64,6 @@ export class AdminLayoutComponent implements OnInit, AfterViewInit {
         }
 
         // Initialize Data
-        this.Parcels.query();
         this.admins.query();
     }
     ngAfterViewInit() {

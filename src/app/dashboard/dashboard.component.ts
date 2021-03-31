@@ -3,8 +3,8 @@ import { Component, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular
 import { Chart } from 'chart.js';
 import { getFullname } from '../helpers';
 import { AuthService } from '../services';
-import { Admin, Parcel, Pickup, User } from '../models';
-import { Admins, Parcels, Pickups, Users } from '../providers';
+import { Admin, User } from '../models';
+import { Admins, Users } from '../providers';
 
 
 @Component({
@@ -16,8 +16,6 @@ export class DashboardComponent implements OnInit, OnChanges {
   chart:any = [];
   adminArray: Array<Admin> = [];
   shipmentArray: Array<any> = [];
-  parcelArray: Array<Parcel> = [];
-  pickupArray: Array<Pickup> = [];
   usersArray: Array<User> = [];
   numParcels: number;
   numPickups: number;
@@ -34,8 +32,6 @@ export class DashboardComponent implements OnInit, OnChanges {
   constructor(
     private users: Users,
     private admins: Admins,
-    private parcels: Parcels,
-    private pickups: Pickups,
     private authService: AuthService,
   ) {
     this.user = this.authService.getUser();
@@ -45,16 +41,15 @@ export class DashboardComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     this.getTodayAdmins();
-    this.calculateIncome(this.parcelArray);
-    this.allDates = this.parcelArray.map(parcel => {
-      return new Date(parcel.createdAt).toLocaleTimeString('en', {
-        year: 'numeric',
-        month: 'short',
-        day: "numeric"
-      })
+    // this.calculateIncome(this.parcelArray);
+    // this.allDates = this.parcelArray.map(parcel => {
+    //   return new Date(parcel.createdAt).toLocaleTimeString('en', {
+    //     year: 'numeric',
+    //     month: 'short',
+    //     day: "numeric"
+    //   })
       
-    });
-    console.log(this.allDates);
+    // });
 
     this.createLineChart('line', [
       {
@@ -86,28 +81,8 @@ export class DashboardComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges) {
   }
 
-  getParcels() {
-    this.parcels.recordRetrieve().then(res => {
-      if(res.success && res.payload.length > 0 ){
-        this.parcelArray = res.payload;
-        this.numParcels = this.parcelArray.length;
-        this.pieData.push(this.numParcels);
-      }
-    }).catch(err => {
-      console.log(err);
-    })
-  }
-  getPickups() {
-    this.pickups.recordRetrieve().then(res => {
-      if(res.success && res.payload.length > 0 ){
-        this.pickupArray = res.payload;
-        this.numPickups = this.pickupArray.length;
-        this.pieData.push(this.numPickups);
-      }
-    }).catch(err => {
-      console.log(err);
-    })
-  }
+ 
+  
   getUsers() {
     this.users.recordRetrieve().then(res => {
       if(res.success && res.payload.length > 0 ){
@@ -123,15 +98,13 @@ export class DashboardComponent implements OnInit, OnChanges {
   // to get data required
   getAllRecords(){
     this.getUsers();
-    this.getParcels();
-    this.getPickups();
   }
 
-  calculateIncome(parcels: Array<Parcel>) {
-    return parcels.reduce((acc, curr) => (
-      acc + curr.costPayable
-    ), 0);
-  }
+  // calculateIncome(parcels: Array<Parcel>) {
+  //   return parcels.reduce((acc, curr) => (
+  //     acc + curr.costPayable
+  //   ), 0);
+  // }
 
   getTodayAdmins() {
     this.admins.recordRetrieve(`?createdAt>${this.today}`).then(res => {

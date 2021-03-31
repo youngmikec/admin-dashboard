@@ -20,10 +20,8 @@ import { ResetPasswordComponent} from '../../pages/reset-password/reset-password
 import { PeopleManagerComponent } from '../../pages/people/people-manager/people-manager.component';
 import { CrmManagerComponent } from '../../pages/crm/crm-manager/crm-manager.component';
 import { LocationManagerComponent } from '../../pages/location/location-manager/location-manager.component';
-import { MediaManagerComponent } from '../../pages/media/media-manager/media-manager.component';
 import { OperationManagerComponent } from '../../pages/operation/operation-manager/operation-manager.component';
 import { SetupManagerComponent } from '../../pages/setup/setup-manager/setup-manager.component';
-import { WalletManagerComponent } from '../../pages/wallet/wallet-manager/wallet-manager.component';
 
 
 @NgModule({
@@ -49,10 +47,8 @@ import { WalletManagerComponent } from '../../pages/wallet/wallet-manager/wallet
     ResetPasswordComponent,
     CrmManagerComponent,
     LocationManagerComponent,
-    MediaManagerComponent,
     OperationManagerComponent,
     SetupManagerComponent,
-    WalletManagerComponent,
   ]
 })
 

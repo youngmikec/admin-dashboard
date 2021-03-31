@@ -15,9 +15,9 @@ import { CustomFormsFieldModule } from '../../components/appanalyst/custom-forms
 
 const routes: Routes = [
   { path: '',             redirectTo: 'setting', pathMatch: 'full' },
-  { path: 'bank',      loadChildren: './setup-manager/bank/bank.module#BankModule' },  
+  // { path: 'bank',      loadChildren: './setup-manager/bank/bank.module#BankModule' },  
   { path: 'category',     loadChildren: './setup-manager/category/category.module#CategoryModule' },
-  { path: 'setting',      loadChildren: './setup-manager/setting/setting.module#SettingModule' },  
+  // { path: 'setting',      loadChildren: './setup-manager/setting/setting.module#SettingModule' },  
 
 ];
 
