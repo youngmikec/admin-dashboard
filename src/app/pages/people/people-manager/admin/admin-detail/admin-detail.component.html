@@ -1,0 +1,30 @@
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Admin Detail</h4>
+          </div>
+          <div class="card-body" *ngIf="record">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class=" text-primary"><th>Property</th><th>Value</th></thead>
+                  <tbody>
+                  <tr><th>Name</th><td>{{ getFullname(record) }}</td></tr>
+                  <tr><th>Gender</th><td>{{ record?.gender }}</td></tr>
+                  <tr><th>Email</th><td>{{ record?.email }}</td></tr>
+                  <tr><th>Phone (Official)</th><td>{{ record?.phone }}</td></tr>
+                  <tr><th>Phone (Home)</th><td>{{ record?.phoneHome }}</td></tr>
+                  <tr><th>Address</th><td>{{ record?.address }}</td></tr>
+                  <tr><th>Terminal</th><td>{{ record?.terminal?.name }}</td></tr>
+                  <tr><th>Role</th><td>{{ record?.role?.name }}</td></tr>
+                  <tr><th>Next-of-Kin</th><td>{{ record?.kin }}</td></tr>
+                  <tr><th>Kin's Phone</th><td>{{ record?.kinPhone }}</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  

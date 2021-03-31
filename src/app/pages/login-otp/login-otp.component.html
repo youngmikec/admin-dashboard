@@ -1,0 +1,46 @@
+<div class="login-wrapper">
+  <div class="grid-wrapper container">
+    <div class="row" id="login-row" [ngStyle]="{
+      marginTop: formLoginHeight
+    }">
+      <div class="col-3"></div>
+      <div class="col">
+        <div class="card">
+          <div class="card-header">
+            <img src="/assets/img/peace-logo.png" with="50" height="50"
+                 [ngStyle]="{ marginTop: '-45px', borderRadius: '50%' }" />
+            <h4 class="card-title" [ngStyle]="{marginTop: '0px'}">Login</h4>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="text" name="phone" id="phone" class="form-control" formControlName="phone" aria-describedby="emailHelp" placeholder="Enter Phone Number">
+                <small
+                  *ngIf="f.phone.touched && !f.phone.valid" class="form-text text-danger">
+                  Phone number is required
+                </small>
+              </div>
+              <div class="form-group">
+                <label for="otp">OTP (One Time Password)</label>
+                <input type="password" name="otp" id="otp" class="form-control" formControlName="otp"  placeholder="OTP">
+                <small
+                  *ngIf="f.otp.touched && !f.otp.valid" class="form-text text-danger">
+                  OTP is required
+                </small>
+              </div>
+              <div class="form-group">
+
+                <a class="text-right" routerLink="/forgot-password"> Forgot Password ?</a>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block hovering ld-over" [disabled]="!this.loginForm.valid">
+                Submit <span class="ld ld-ball ld-bounce"></span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-3"></div>
+    </div>
+  </div>
+</div>

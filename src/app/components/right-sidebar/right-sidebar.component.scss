@@ -1,0 +1,87 @@
+@import "../../../assets/scss/now-ui-dashboard/variables";
+
+.right-sidebar{
+    width:450px;
+    height: 90vh;
+    overflow:hidden;
+    background-color: #fff; // #4e0192;
+    position: fixed;
+    top: 50px; //! Sam
+    right: -450px;
+    z-index:2;
+    box-shadow: 0px 0px 10px rgba(20, 20, 20, 0.7);
+    transition: right .3s;
+    &.active{
+        right: 0px;
+    }
+    .inner-right-siderbar{
+        margin: 5px;
+        width: calc(100% - 20px);
+        height: calc(90vh - 30px);
+        background-color: #ffffff;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+        overflow: hidden;
+    }
+    *{
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+        -ms-user-select: none;
+    }
+
+    .header{
+        position: relative;
+        padding-bottom: 20px;
+        background-color: $danger-color; // #4f0192;
+        color: #ffffff;
+        border-bottom-right-radius: 2px;
+        border-bottom-left-radius: 2px;
+        border-top-left-radius: 2px;
+        border-top-left-radius: 2px;
+        padding-top: 10px;
+        margin-bottom: 20px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h4{
+            margin-top: 10px;
+            font-weight: bold;
+            padding-left: 5px;
+            text-align: center;
+        }
+        .close-box{
+            background-color: $danger-color; //#c60808;
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            border-radius: 50%;
+            position: absolute;
+            right: -5px;
+            top: -5px;
+            text-align: center;
+            box-shadow: 0 0 5px #ffffff;
+            cursor: pointer;
+            .fa{
+                color: #ffffff;
+                font-size: 20px;
+                display: inline-block;
+                margin-top: 5px;
+                pointer-events: none;
+            }
+        }
+    }
+
+    .content{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        height: calc(90vh - 180px); // 100vh
+        overflow-y: scroll;
+        overflow-x: hidden;
+        padding-bottom: 50px;
+        text-align: left !important;
+    }
+}

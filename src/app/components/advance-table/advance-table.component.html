@@ -1,0 +1,16 @@
+<div *ngIf="data" class="export-con">
+  <!-- Example split danger button -->
+  <div class="btn-group pull-right" title="Export Table">
+    <button (click)="exportCSV()" class="btn btn-success" type="button">
+      <i class="now-ui-icons filesPaper"></i> Excel
+    </button>
+    <button (click)="exportPDF()" class="btn btn-danger" type="button">
+      <i class="now-ui-icons files_single-copy-04"></i> PDF
+    </button>
+  </div>
+</div>
+<div class="table-responsive">
+  <table datatable [dtOptions]="dtOptions" class="table table-hover table-striped">
+    <ng-content></ng-content>
+  </table>
+</div>

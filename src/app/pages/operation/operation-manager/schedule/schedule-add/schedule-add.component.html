@@ -1,0 +1,134 @@
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <div class="text-right">
+                <button routerLink="/freexit/pickup" class="btn btn-primary">Back</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card">
+    
+        <div class="card-body">
+            <div class="d-flex justify-content-center">
+                <img src="../../../../../assets/img/pickup-img.jpg" alt="" class="rounded-circle" style="margin: auto; width: 10%;">
+            </div>
+            <br>
+            <div class="container">
+                <form action="" [formGroup]="addForm" (ngSubmit)="onSubmit()" class="form">
+    
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="">Description*</label>
+                                <input type="text" class="form-control" formControlName="description" placeholder="Schedule description">
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="">Vehicle*</label>
+                                <select name="" id="" formControlName="vehicle" class="form-control">
+                                    <option value="">Select Vehicle</option>
+                                    <option *ngFor="let vehicle of vehicleOptions" value="{{vehicle.id}}">{{vehicle.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="">Volume*</label>
+                                <input type="text" class="form-control" formControlName="volume" placeholder="Volume">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="">Mass*</label>
+                                <input type="text" class="form-control" formControlName="mass" placeholder="mass">
+                            </div>
+                        </div>
+                        
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="">CountyFrom*</label>
+                                <select name="" id="" formControlName="countyFrom" class="form-control">
+                                    <option *ngFor="let county of countyOptions" value="{{county.id}}">{{county.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="">StateFrom*</label>
+                                <select name="" id="" formControlName="stateFrom" class="form-control">
+                                    <option *ngFor="let state of stateOptions" value="{{state.id}}">{{state.name}}</option>
+                                    <option value="Enugu">Enugu</option>
+                                    <option value="Enugu">Ebony</option>
+                                    <option value="Enugu">Anambra</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="">CountryFrom</label>
+                                <select name="" id="" formControlName="countryFrom" class="form-control">
+                                    <option *ngFor="let country of countryOptions" value="{{country.id}}">{{country.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="">CountyTo*</label>
+                                <select name="" id="" formControlName="countyTo" class="form-control">
+                                    <option *ngFor="let county of countyOptions" value="{{county.id}}">{{county.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="">StateTo*</label>
+                                <select name="" id="" formControlName="stateTo" class="form-control">
+                                    <option *ngFor="let state of stateOptions" value="{{state.id}}">{{state.name}}</option>
+                                    <option value="Enugu">Enugu</option>
+                                    <option value="Enugu">Ebony</option>
+                                    <option value="Enugu">Anambra</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="">CountryTo</label>
+                                <select name="" id="" formControlName="countryTo" class="form-control">
+                                    <option *ngFor="let country of countryOptions" value="{{country.id}}">{{country.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    
+                        
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="">Is Vehicle Full</label>
+                                <!-- <input type="text" class="form-control" formControlName="" placeholder="country"> -->
+                                <select name="" id="" formControlName="isFull" class="form-control">
+                                    <option value="TRUE">- YES -</option>
+                                    <option value="FALSE">- NO -</option>
+                                </select>
+                            </div>
+                        </div>
+    
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary btn-block" [disabled]="addForm.invalid || loading">Create
+                                <i class="fa fa-refresh fa-spin"></i>
+                                <img *ngIf="loading" class="pl-3"
+                                src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                            </button>
+                        </div>
+                    </div>
+    
+                </form>
+    
+            </div>
+        </div>
+    </div>
+</div>

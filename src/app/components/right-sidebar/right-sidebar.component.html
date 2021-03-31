@@ -1,0 +1,14 @@
+<script src="right-sidebar.component.ts"></script>
+<div class="right-sidebar" [ngClass]="{ active: sidebarOpen }" [ngStyle]="{zIndex: zIndex || 1030}">
+  <div class="inner-right-siderbar">
+    <div class="header" #header>
+      <h4>{{ heading }}</h4>
+      <div class="close-box" (click)="closeSidebar()">
+          <i class="now-ui-icons ui-1_simple-remove fa"></i>
+      </div>
+    </div>
+    <div class="content text-left">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

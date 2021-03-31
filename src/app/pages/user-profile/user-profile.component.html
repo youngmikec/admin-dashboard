@@ -1,0 +1,85 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Edit Profile</h5>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="editForm" (ngSubmit)="updateProfile()">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="email">Email address</label>
+                  <input formControlName="email" id="email" type="email" class="form-control" placeholder="{{user.email}}">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label>Other Names</label>
+                  <input formControlName="lastName" type="text" class="form-control" placeholder="Other Names" value="{{user.lastName}}">
+                </div>
+              </div>
+              <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label>Surname</label>
+                  <input formControlName="surname" type="text" class="form-control" placeholder="Surname" value="{{user.surname}}">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Address</label>
+                  <input formControlName="address" type="text" class="form-control" placeholder="Home Address" value="{{user.address}}">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label>Phone Personal</label>
+                  <input formControlName="phoneHome" type="text" class="form-control" placeholder="Phone Personal" value="{{user.phoneHome}}">
+                </div>
+              </div>
+              <div class="col-md-6 px-1">
+                <div class="form-group">
+                  <label>Country</label>
+                  <input formControlName="country" type="text" class="form-control" placeholder="Country" value="{{user.country}}">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <button type="submit" class="btn btn-block btn-primary"> Update Profile </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card card-user">
+        <div class="image">
+<!--          <img src="../assets/img/bg5.jpg" alt="...">-->
+        </div>
+        <div class="card-body">
+          <div class="author">
+            <a href="#">
+              <img class="avatar border-gray" src="{{userImage}}" alt="...">
+              <h5 class="title">{{user.lastName}}</h5>
+            </a>
+          </div>
+          <p>Email: {{ user?.email }}</p>
+          <p>Phone: {{ user?.phone }}</p>
+          <p>Gender: {{ user?.gender }}</p>
+        </div>
+        <hr>
+      </div>
+    </div>
+  </div>
+</div>

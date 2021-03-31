@@ -1,0 +1,59 @@
+<div class="main-content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <button class="btn btn-primary pull-right" (click)="goBack()"> <i class="now-ui-icons arrows-1_minimal-left"></i> Go Back </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Parcel Detail</h4>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class=" text-primary"><th>Property</th><th>Value</th></thead>
+                  <tbody>
+                  <tr><th>Code</th><td>{{ record?.code }}</td></tr>
+                  <tr><th>Name</th><td>{{ record?.name }}</td></tr>
+                  <tr><th>Amount</th><td>{{ record?.costPayable }}</td></tr>
+                  <tr><th>Image</th><td>{{ record?.image }}</td></tr>
+                  <tr><th>Sender</th><td>{{ getFullname(record?.sender) }}</td></tr>
+                  <tr><th>Courier</th><td>{{ getFullname(record?.courier) }}</td></tr>
+                  <tr><th>Recipient</th><td>{{ getFullname(record?.recipient) }}</td></tr>
+                  <tr><th>Urgency</th><td>{{ record?.urgency }}</td></tr>
+                  <tr><th>Distance</th><td>{{ record?.distance }}</td></tr>
+                  <tr><th>Mass</th><td>{{ record?.mass }}</td></tr>
+                  <tr><th>Volume</th><td>{{ record?.volume }}</td></tr>
+                  <tr><th>Worth</th><td>{{ record?.worth }}</td></tr>
+                  <tr><th>Description</th><td>{{ record?.description }}</td></tr>
+                  <tr><th>Pickup</th><td>{{ record?.pickup }}</td></tr>
+                  <tr><th>TerminalFrom</th><td>{{ record?.terminalFrom }}</td></tr>
+                  <tr><th>StateFrom</th><td>{{ record?.stateFrom }}</td></tr>
+                  <tr><th>CountyFrom</th><td>{{ record?.countyFrom }}</td></tr>
+                  <tr><th>TerminalTo</th><td>{{ record?.terminalTo }}</td></tr>
+                  <tr><th>CountyTo</th><td>{{ record?.countyTo }}</td></tr>
+                  <tr><th>StateTo</th><td>{{ record?.stateTo }}</td></tr>
+                  <tr><th>Country</th><td>{{ record?.countryFrom }}</td></tr>
+                  <tr><th>Transaction</th><td>{{ record?.transaction }}</td></tr>
+                  <tr><th>PickupDate</th><td>{{ record?.pickupDate }}</td></tr>
+                  <tr><th>ShippedDate</th><td>{{ record?.shippedDate }}</td></tr>
+                  <tr><th>DeliveredDate</th><td>{{ record?.deliveredDate }}</td></tr>
+                  <tr><th>DeliveryAddress</th><td>{{ record?.deliveryAddress }}</td></tr>
+                  <tr><th>DeliveryStatus</th><td>{{ record?.deliveryStatus }}</td></tr>
+                  <tr><th>Mode of ID</th><td>{{ record?.identification }}</td></tr>
+                  <tr><th>Remark</th><td>{{ record?.remark }}</td></tr>
+                  <tr><th>Is Returned</th><td>{{ record?.isReturned }}</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

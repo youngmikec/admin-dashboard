@@ -1,0 +1,15 @@
+.export-con {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  right: 2em;
+  top: 1em;
+}
+
+@media screen and (max-width: 500px) {
+  .export-con {
+    position: static;
+    right: unset;
+    top: unset;
+  }
+}

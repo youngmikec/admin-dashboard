@@ -1,0 +1,38 @@
+<div class="main-content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <button class="btn btn-primary pull-right" (click)="goBack()"> <i class="now-ui-icons arrows-1_minimal-left"></i> Go Back </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Bank Detail</h4>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class=" text-primary"><th>Property</th><th>Value</th></thead>
+                  <tbody>
+                  <tr><th>Code</th><td>{{ record?.shortCode }}</td></tr>
+                  <tr><th>Amount</th><td>{{ record?.bankCode }}</td></tr>
+                  <tr><th>Description</th><td>{{ record?.bankCode }}</td></tr>
+                  <tr><th>User To</th><td>{{ record?.name }}</td></tr>
+                  <tr><th>Wallet To</th><td>{{ record?.shortName }}</td></tr>
+                  <tr><th>Type</th><td>{{ record?.shortName }}</td></tr>
+                  <tr><th>Status</th><td>{{ record?.country }}</td></tr>
+                  <tr><th>Narration</th><td>{{ record?.contactPerson }}</td></tr>
+                  <tr><th>Website</th><td>{{ record?.website }}</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

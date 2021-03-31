@@ -1,0 +1,160 @@
+<script src="receipts.component.ts"></script>
+<div #invoicePrintArea class="card" *ngIf="show"
+     style='width: 100%; min-height: 1000px; height: 99vh; font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+     border: 0; display: flex; flex-direction: column; font-weight: 400;'>
+
+  <div style="flex: 3; display: flex; flex-direction: column; padding: 5px 20px; background-color: rgba(255,255,255,0.85);">
+    <div style="flex: 1">
+      <h3>
+        <img src="./../../../assets/img/peace-logo.png" width="60" style="margin-right: 10px; vertical-align: middle;" />
+        PEACE MASS LOGISTICS
+      </h3>
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: row; justify-content: space-between; font-size: 11px">
+      <div style="flex: 2; text-align: left;">
+        <p>
+          <strong>Date Issued: </strong>{{data.dateIssued | date}}
+        </p>
+        <p>
+          <strong>Shipment Code: </strong>{{data.code}}
+        </p>
+        <p>
+          <strong>Description: </strong>{{data.description}}
+        </p>
+      </div>
+      <div style="flex: 1; text-align: right;">
+        <!--<p>Peace Mass Logistics</p>-->
+        <p><strong>Peace Mass Address: Head Office :</strong> Peace Factory Road Emene, Enugu, Enugu State.</p>
+        <p><strong>Customer Care : </strong>07007322362 <br/> <strong>Enquiry : </strong> 08055492865 <br/> <strong>Complaint :</strong> 08055091806, </p>
+      </div>
+    </div>
+    <h4 style="color: #888888; text-align: center;">Shipment Information</h4>
+    <div style="flex: 1; display: flex; flex-direction: row; justify-content: space-between">
+      <div style="flex: 1; text-align: right; padding: 1px 5px; font-size: 11px; margin-top: -10px">
+        <p>
+          <strong>Sender: </strong>
+        </p>
+        <p>
+          <strong>Recipient: </strong>
+        </p>
+        <p>
+          <strong>Transiting from: </strong>
+        </p>
+        <p>
+          <strong>Transiting to: </strong>
+        </p>
+        <p style="margin-top: 10px">
+          <strong>Item Value: </strong>
+        </p>
+      </div>
+      <div style="flex: 1; text-align: left; padding: 1px 5px; font-size: 11px; margin-top: -10px" >
+        <p>&nbsp;{{data.sender}}</p>
+        <p>&nbsp;{{data.recipient}}</p>
+        <p>&nbsp;{{data.pmlTerminalFrom}}</p>
+        <p>&nbsp;{{data.pmlTerminalTo}}</p>
+        <p>&nbsp;{{data.value | currency:'NGN':'₦'}}</p>
+      </div>
+    </div>
+    <div style="flex: 2; display: flex; align-items: center">
+      <table style="width: 100%; border: 0; border-collapse: collapse" border="0">
+        <thead>
+          <tr style="border-bottom: 5px double #888888; color: #555555; border-top: 1px solid #888888; text-align: left;">
+            <th style="padding: 5px 0;">PAYMENT METHOD</th>
+            <th style="text-align: right; width: 100px;">CHARGE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="font-weight: bolder; text-align: left;">
+            <td style="padding: 10px 0;">{{data.paymentMethod}}</td>
+            <td style="text-align: right;">{{data.charge | currency:'NGN':'₦'}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div style="flex: 3; display: flex; flex-direction: column; padding: 2px 10px; background-color: rgba(255,255,255,0.85);">
+    <h3 style="text-align: center">Conditions of Carriage</h3>
+    <div style="flex: 3; display: flex; flex-direction: row; justify-content: flex-end;">
+      <table style="width: 100%; border: 0; border-collapse: collapse" border="0">
+        <tbody>
+        <tr style="border-top: 1px solid #888888; font-size: 8px;">
+          <td style="padding: 1px 5px; width: 48%; margin-top: -40px;">
+            <ol>
+              <li>In these conditions
+                <ol type="a">
+                  <li>Company means Peace Mass Logistics</li>
+                  <li>Goods mean any document or parcel consigned by customers from one address to another</li>
+                  <li>Customer means any individual, firm, corporate body, incorporated association or other body who consigns good as afore mentioned</li>
+                </ol>
+              </li>
+              <li>The company is not a common carrier and accepts goods for conveyance on and subject exclusive to these conditions. Any servant agent of the company who alter, vary or waive any provision of this contract shall be liable and not the company. </li>
+              <li>The company accepts good for conveyance on the basis that 3a-3b below of these conditions are all fulfilled and the customer irrevocable warrants that they are so fulfilled.
+                <ol type="a">
+                  <li>That the customer is either the owner of or acting as the fully authorized agent for the owner of the goods and that if any other person has an interest in the goods the customer is acting as his fully authorized agent also. </li>
+                  <li>That the goods do not comprise or include any dangerous  which:
+                    <ol type="i">
+                      <li>Are specified by the Imitational Air Transportation Association as restricted articles especially without prejudice to the generality of the foregoing explosive gases, weapons and ammunition, flammable substances, oxidizing substance, poisonous, radioactive material, corrosives. </li>
+                      <li>Through which not specified above are of a kind nature and by their nature are liable to cause death or personal injury. </li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+              <li>The customer shall pay the company in respect  of each consignment of the customer’s  good in accordance with the company’s tariff charge in force at the time of each consignment. </li>
+              <li>In the event that company passes or agrees to pay third party any duty and/or taxes and /or levy in respect of any customer’s goods. </li>
+              <li>The company is entitled to convey goods:
+                <ul>
+                  <li>By its own servants or agent and/or by airline, delivery  company and/or other independent contractor</li>
+                  <li>By any means of conveyance</li>
+                  <li>By any route whatsoever</li>
+                </ul>
+              </li>
+            </ol>
+            <span>Sender Sign ......................................</span>
+          </td>
+          <td style="padding: 1px 5px; width: 48%; ">
+            <ol start="7">
+              <li>The company shall only be liable to pay to the customer for the loss or damage to the goods or wrong delivery occurring to the goods if and to the extent that the company’s negligence or, its breach or non-performance was responsible for the loss provided that such liability shall be limited to the lesser of the declared value of goods (stand on the waybill) or value for customs goods of #50 in respect of any claim or services of claims arising out of any more source or event.
+                <ol type="a">
+                  <li>The company shall under no circumstance whatsoever be liable for loss, damage, misdelivery or delay or any kind whatsoever:
+                    <ol type="i">
+                      <li>Cause by events beyond the company’s control, including both limited to acts of God, perils of the air, adverse weather conditions, mechanical delays, acts of war, hostilities, civil commotions, strikes, industrial actions, or act of omission by public authorities with actual or apparent authority. </li>
+                      <li>Caused by an independent contractor </li>
+                      <li>Where the customer fails within seven days of any loss, damage, misdelivery or delay occurring to goods or such becoming known to the customer, which is later, to submit a claim in writing other than on a consignment more or delivery of documents, to the company at its registered office by recorded delivery letter. </li>
+                      <li>Where the customer fails to issue legal proceedings against the company relating to a claim  within 30 days commencing with the date of the initial claim letter sent in accordance with clause iii above </li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+              <li>The consignor is to be paid 20 percent of the declared value of the item on the receipt during registration if the item is above #10,000 but if valued below #10,000, FREEXITNOW pays 50 percent. </li>
+              <li>The customer acknowledge and agree that the provisions of condition 8 and 9 shall extent to protect and indemnify the admins and agents of the company and that such provisions have been entered into and shall be enforced by the company for itself and as trustee or agent for such admins and agents. </li>
+              <li>The company shall have a lien for any amount due under the contract and the cost of recovering the same. If any lien is not satisfied within a reasonable time, the company shall be at full liberty to sell the goods either privately or by the auction and to apply the proceeds of any such in or towards discharge of the lien and the expense of this sale. </li>
+              <li>The contract shall be governed by laws of the Federal Republic of Nigeria and any dispute under them shall be within the exclusive jurisdiction of Nigeria courts. </li>
+              <li><strong>Cross check your items at the point of receiving as FREEXITNOW will not be liable for any complaint or damage thereafter. </strong></li>
+              <li>
+                All customer shipment that stays above 3 days at the terminal will attract a demurrage fee of N100 daily.
+              </li>
+            </ol>
+            <span>Receiver Sign ..........................................</span>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="flex: 1; font-size: large;">
+      <p><span style="font-size: large; color: red;">♥</span> Thank you!</p>
+    </div>
+  </div>
+</div>
+
+<div #slipPrintArea class="card" *ngIf="false"
+     style='width: 100%; min-height: 1000px; height: 95vh; font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+     border: 0; display: flex; flex-direction: column; font-size: 3mm; font-weight: 400; justify-content: center; align-items: center;'>
+  <div style="width: 57mm; min-height: 100mm; border: 1px dashed gray; padding: 5mm 3mm; text-align: center;">
+    <img src="./../../../assets/img/peace-logo.png" height="50mm"
+         style="margin: 0 auto; display: block;" />
+    <p style="margin: 0mm auto">Peace Mass Transport</p>
+    <p style="margin: 0mm auto">Peace Mass Address</p>
+    <p style="margin: 0mm auto">Peace Mass Phone Number</p>
+  </div>
+</div>

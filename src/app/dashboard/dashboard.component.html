@@ -1,0 +1,198 @@
+<div class="panel-header panel-header-sm">
+  
+</div>
+
+<div class="main-content">
+
+  <!-- <div class="row">
+    <div class="col-lg-4">
+      <div class="card card-chart">
+        <div class="card-header">
+          <h4 class="card-title">Parcels Created Today</h4>
+        </div>
+        <div class="card-body">
+          <h5 class="text-black-50"><strong>{{parcelArray.length}}</strong></h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6">
+      <div class="card card-chart">
+        <div class="card-header">
+          <h4 class="card-title">Income made today</h4>
+        </div>
+        <div class="card-body">
+          <h5 class="text-black-50"><strong>{{todayIncome | currency:  "NGN"}}</strong></h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6">
+      <div class="card card-chart">
+        <div class="card-header">
+          <h4 class="card-title">New Admins today</h4>
+        </div>
+        <div class="card-body">
+          <h5 class="text-black-50"><strong>{{adminArray.length}}</strong></h5>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <p class="card-title"><strong>Performance</strong></p>
+          <hr>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-3 col-md-3 shadow-sm">
+                <div class="row">
+                  <div class="col-md-4 p-2">
+                    <div class="badge bg-info p-3 text-wrap rounded-circle">
+                      <i class="now-ui-icons tech_tv fw-bolder fs-3 text-light"></i>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="text-secondary d-inline border-bottom m-0">
+                      <p><small><strong>Parcels created</strong></small></p>
+                    </div>
+                    <div class="d-inline">
+                      <p class="fs-3 fw-bolder"><strong>{{ parcelArray.length }}</strong></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-3 shadow-sm">
+                <div class="row">
+                  <div class="col-md-4 p-2">
+                    <div class="badge bg-primary p-3 text-wrap rounded-circle">
+                      <i class="now-ui-icons tech_tv fw-bolder fs-3 text-light"></i>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="text-secondary d-inline border-bottom m-0">
+                      <p><small><strong>Pickups pending</strong></small></p>
+                    </div>
+                    <div class="d-inline">
+                      <p class="fs-3 fw-bolder"><strong>{{ pickupArray.length }}</strong></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-3 shadow-sm">
+                <div class="row">
+                  <div class="col-md-4 p-2">
+                    <div class="badge bg-success p-3 text-wrap rounded-circle">
+                      <i class="now-ui-icons business_money-coins fw-bolder fs-3 text-light"></i>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="text-secondary d-inline border-bottom-1 m-0">
+                      <p><small><strong>Income</strong></small></p>
+                    </div>
+                    <div class="d-inline">
+                      <p class="fs-3 fw-bolder"><strong>N 100k</strong></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-3 shadow-sm">
+                <div class="row">
+                  <div class="col-md-4 p-2">
+                    <div class="badge bg-warning p-3 text-wrap rounded-circle">
+                      <i class="now-ui-icons tech_tv fw-bolder fs-3 text-light"></i>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="text-secondary d-inline border-bottom m-0">
+                      <p><small><strong>Users</strong></small></p>
+                    </div>
+                    <div class="d-inline">
+                      <p class="fs-3 fw-bolder"><strong>{{ usersArray.length }}</strong></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <div style="width: 100%;">
+            <canvas id="canvas" style="position: relative;">{{ chart }}</canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <div style="width: 100%;">
+            <canvas id="pie-chart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card card-tasks">
+        <div class="card-header">
+          <h4 class="card-title">Routing Details</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card  card-tasks">
+        <div class="card-header ">
+          <h4 class="card-title">Most Recent</h4>
+        </div>
+        <div class="card-body ">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="card-category">New Admins</h5>
+          <h4 class="card-title"> Most Recent</h4>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class=" text-primary">
+                <tr>
+                  <th class="text-left"> SN </th>
+                  <th>Name</th>
+                  <th>Phone</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr  *ngFor="let admin of adminArray | slice:0:10; let i = index">
+                  <td>{{ i + 1 }}</td>
+                  <td>{{ getFullname(admin) | uppercase }}</td>
+                  <td>{{ admin.phone }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

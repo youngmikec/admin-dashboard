@@ -1,0 +1,154 @@
+
+
+<div class="container">
+
+    <div class="card">
+        <div class="card-body">
+            <div class="text-right">
+                <button routerLink="/freexit/bank" class="btn btn-primary">Back</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="">
+                                <h4>Add Withdraw</h4>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <span>
+                                <i class=""></i>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="card-body">
+                    <div class="container">
+                        <form [formGroup]="addForm" class="form" (ngSubmit)="onSubmit()">
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="">Amount*</label>
+                                        <input type="number" class="form-control" formControlName="amount" placeholder="100">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="">User From*</label>
+                                        <input type="text" class="form-control" formControlName="userFrom" placeholder="User from">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="">Wallet From*</label>
+                                        <input type="text" class="form-control" formControlName="walletFrom" placeholder="semders wallet">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="">Description</label>
+                                        <input type="text" class="form-control" formControlName="description" placeholder="Description">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="">Narration</label>
+                                        <input type="text" class="form-control" formControlName="narration" placeholder="narration">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="">Status</label>
+                                        <select name="status" id="status" class="form-control" formControlName="status">
+                                            <option value="PENDING">Pending</option>
+                                            <option value="SUCCESSFUL">Successful</option>
+                                            <option value="DECLINED">Declined</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="">WithdrawCharge</label>
+                                        <input type="number" class="form-control" formControlName="charge" placeholder="withdrawCharge">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="">BankName</label>
+                                        <input type="text" class="form-control" formControlName="bankName" placeholder="bankName">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="">Account Name</label>
+                                        <input type="text" class="form-control" formControlName="bankUserName" placeholder="bankUserName">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="">Account Number</label>
+                                        <input type="text" class="form-control" formControlName="bankUserNumber" placeholder="bankUserNumber">
+                                    </div>
+                                </div>
+                            </div>
+                           
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="">Remark</label>
+                                        <input type="text" class="form-control" formControlName="remark" placeholder="remark">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <button class="btn btn-block btn-primary btn-lg" [disabled]="loading == true">Create
+                                        <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                                    </button>
+                                </div>
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--modal-->

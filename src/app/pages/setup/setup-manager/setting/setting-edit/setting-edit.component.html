@@ -1,0 +1,98 @@
+
+
+<div class="container">
+
+    <div class="card">
+        <div class="card-body">
+            <div class="text-right">
+                <button routerLink="/freexit/pickup" class="btn btn-primary">Back</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="">
+                                <h4>Edit Setting</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="card-body">
+                    <div class="container">
+                        <form [formGroup]="editForm" class="form" (ngSubmit)="onSubmit()">
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="name"><strong>Name*</strong></label>
+                                        <input id="name" type="text" class="form-control" formControlName="name">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for=""><strong>Value*</strong></label>
+                                        <input type="text" class="form-control" formControlName="value">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for=""><strong>Description*</strong></label>
+                                        <input type="text" class="form-control" formControlName="description">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for=""><strong>Type*</strong></label>
+                                        <input type="text" class="form-control" formControlName="type">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="isPublic"><strong>Is Public?*</strong></label>
+                                        <select name="isPublic" id="isPublic" class="form-control" formControlName="isPublic">
+                                            <option value="TRUE">- YES -</option>
+                                            <option value="FALSE">- NO -</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <button class="btn btn-block btn-primary btn-lg" [disabled]="editForm.invalid || loading == true">Edit
+                                        <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                                    </button>
+                                </div>
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,36 @@
+
+    <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h4 class="card-title">User Detail</h4>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead class=" text-primary"><th>Property</th><th>Value</th></thead>
+                    <tbody>
+                      <tr><th>Code</th><td>{{ record?.code }}</td></tr>
+                      <tr><th>Type</th><td>{{ record?.type }}</td></tr>
+                      <tr><th>Amount</th><td>{{ record?.amount }}</td></tr>
+                      <tr><th>Description</th><td>{{ record?.description }}</td></tr>
+                      <tr><th>Sender</th><td>{{ record?.userFrom }}</td></tr>
+                      <tr><th>Recipient</th><td>{{ record?.userTo }}</td></tr>
+                      <tr><th>Wallet From</th><td>{{ record?.walletFrom }}</td></tr>
+                      <tr><th>Narration</th><td>{{ record?.narratin }}</td></tr>
+                      <tr><th>Subsidiary</th><td>{{ record?.subsidiary }}</td></tr>
+                      <tr><th>Status</th><td>{{ record?.status }}</td></tr>
+                      <tr><th>Transaction</th><td>{{ record?.transaction }}</td></tr>
+                      <tr><th>Charge</th><td>{{ record?.charge }}</td></tr>
+                      <tr><th>Bank Name</th><td>{{ record?.bankName }}</td></tr>
+                      <tr><th>Acct Name</th><td>{{ record?.bankUserName }}</td></tr>
+                      <tr><th>Acct Number</th><td>{{ record?.bankuserNumber }}</td></tr>
+                      <tr><th>Remark</th><td>{{ record?.remark }}</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    

@@ -1,0 +1,28 @@
+  <div class="main-content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Setting Detail</h4>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class=" text-primary"><th>Property</th><th>Value</th></thead>
+                  <tbody>
+                  <tr><th>Name</th><td>{{ record?.name || '' }}</td></tr>
+                  <tr><th>Value</th><td>{{ record?.value || '' }}</td></tr>
+                  <tr><th>Is Public</th><td>{{ record?.isPublic || '' }}</td></tr>
+                  <tr><th>Type</th><td>{{ record?.type || '' }}</td></tr>
+                  <tr><th>Description</th><td>{{ record?.description || '' }}</td></tr>
+                  <tr><th>Created</th><td>{{ record?.createdAt | date }} {{ record?.createdBy?.email }}</td></tr>
+                  <tr><th>Updated</th><td>{{ record?.updatedAt | date }} {{ record?.updatedBy?.email }}</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

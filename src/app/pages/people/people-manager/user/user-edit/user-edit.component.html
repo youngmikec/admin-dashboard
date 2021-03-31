@@ -1,0 +1,197 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                    <form [formGroup]=" updateForm" (ngSubmit)="onUpdate()" autocomplete="off">
+                        <div class="row">
+                            <div class="col-md-12 px-1">
+                                <div class="form-group">
+                                    <label for="title" class="control-label required">Title *</label>
+                                    <input type="text" list="title-list" class="form-control" formControlName="title" id="title" placeholder="Title" required>
+                                    <datalist id="title-list">
+                                        <option value="MR">MR</option>
+                                        <option value="MRS">MRS</option>
+                                        <option value="DR">DR</option>
+                                        <option value="ENGR">ENGR</option>
+                                        <option value="MISS">MISS</option>
+                                        <option value="PROF">PROF</option>
+                                    </datalist>
+                                </div>
+                            </div>
+                            <div class="col-md-12 px-1">
+                                <div class="form-group">
+                                    <label for="surname" class="control-label required">Surname *</label>
+                                    <input type="text" class="form-control" formControlName="surname" id="surname" placeholder="Surname">
+                                </div>
+                            </div>
+                            <div class="col-md-12 px-1">
+                                <div class="form-group">
+                                    <label for="firstName" class="control-label required">FirstName *</label>
+                                    <input type="text" class="form-control" formControlName="firstName" id="firstName" placeholder="First Name">
+                                </div>
+                            </div>
+                            <div class="col-md-12 px-1">
+                                <div class="form-group">
+                                    <label for="middleName" class="control-label required">Middle Name *</label>
+                                    <input type="text" class="form-control" formControlName="middleName" id="middleName" placeholder="Middle Name">
+                                </div>
+                            </div>
+                            <div class="col-md-12 px-1">
+                                <div class="form-group">
+                                    <label for="lastName" class="control-label required">Last Name *</label>
+                                    <input type="text" class="form-control" formControlName="lastName" id="lastName" placeholder="Last Name">
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="row">
+                            <!-- <div class="col-md-12 px-1">
+                                <div class="form-group row">
+                                    <div class="control-label col-md-4"><br/>Gender*</div>
+                                    <div class="col-md-3">
+                                        <br/>
+                                        <label class="radio-inline" for="male">M</label>
+                                        <input id="gender" type="radio" class="" value="MALE" name="gender" formControlName="gender" >
+                                    </div>
+    
+                                    <div class="col-md-3">
+                                        <br/>
+                                        <label class="radio-inline" for="female">F</label></div>
+                                        <input id="gender" type="radio" class="" value="FEMALE" name="gender" formControlName="gender" >
+                                </div>
+                            </div> -->
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="gender" class="control-label">Gender*</label>
+                                    <select name="gender" id="gender" class="form-control"  name="status" formControlName="gender">
+                                        <option value="">GENDER</option>
+                                        <option value="M">MALE</option>
+                                        <option value="F">FEMALE</option>
+                                        <option value="O">OTHER</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12 px-1">
+                                <div class="form-group">
+                                    <label for="birthDate" class="control-label">Birth Date</label>
+                                    <input class="form-control" id="birthDate" formControlName="birthDate" type="date" placeholder="Date of Birth">
+                                </div>
+                            </div>
+                            <div class="col-md-12 px-1">
+                                <div class="form-group">
+                                    <label for="address" class="control-label required">Address *</label>
+                                    <input type="text" class="form-control" formControlName="address" id="address" placeholder="Home Address">
+                                </div>
+                            </div>
+    
+                            <div class="col-md-12 px-1">
+                                <div class="form-group ">
+                                    <label class="custom-control-label radio-inline" for="country">Country</label>
+                                    <input id="country" type="text" class="form-control"  name="type" formControlName="country" > 
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-12 px-1">
+                                <div class="form-group ">
+                                    <label class="custom-control-label radio-inline" for="accessLevel">Access Level</label>
+                                    <input id="accessLevel" type="text" class="form-control"  name="accessLevel" formControlName="accessLevel" > 
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-12 px-1">
+                                <div class="form-group ">
+                                    <label class="custom-control-label radio-inline" for="accountName">Account Name</label>
+                                    <input id="accountName" type="text" class="form-control"  name="accountName" formControlName="accountName" > 
+                                </div>
+                            </div>
+                            <div class="col-md-12 px-1">
+                                <div class="form-group ">
+                                    <label class="custom-control-label radio-inline" for="accountNumber">Account Number</label>
+                                    <input id="accountNumber" type="text" class="form-control"  name="accountNumber" formControlName="accountNumber" > 
+                                </div>
+                            </div>
+                            <div class="col-md-12 px-1">
+                                <div class="form-group ">
+                                    <label class="custom-control-label radio-inline" for="guarantor">Guarantor</label>
+                                    <input id="guarantor" type="text" class="form-control"  name="guarantor" formControlName="guarantor" > 
+                                </div>
+                            </div>
+                            <div class="col-md-12 px-1">
+                                <div class="form-group ">
+                                    <label class="custom-control-label radio-inline" for="guarantorAddress"></label>Guarantor Address
+                                    <input id="guarantorAddress" type="text" class="form-control"  name="guarantorAddress" formControlName="guarantorAddress" > 
+                                </div>
+                            </div>
+                            <div class="col-md-12 px-1">
+                                <div class="form-group ">
+                                    <label class="custom-control-label radio-inline" for="guarantorPhone">Guarantor Phone</label>
+                                    <input id="guarantorPhone" type="text" class="form-control"  name="guarantorPhone" formControlName="guarantorPhone" > 
+                                </div>
+                            </div>
+                            <div class="col-md-12 px-1">
+                                <div class="form-group ">
+                                    <label class="custom-control-label radio-inline" for="kin">Kin</label>
+                                    <input id="kin" type="text" class="form-control"  name="kin" formControlName="kin" > 
+                                </div>
+                            </div>
+                            <div class="col-md-12 px-1">
+                                <div class="form-group ">
+                                    <label class="custom-control-label radio-inline" for="kinAddress">Kin Address</label>
+                                    <input id="kinAddress" type="text" class="form-control"  name="kinAddress" formControlName="kinAddress" > 
+                                </div>
+                            </div>
+                            <div class="col-md-12 px-1">
+                                <div class="form-group ">
+                                    <label class="custom-control-label radio-inline" for="kinPhone">Kin Phone</label>
+                                    <input id="kinPhone" type="text" class="form-control"  name="kinPhone" formControlName="kinPhone" > 
+                                </div>
+                            </div>
+                            <div class="col-md-12 px-1">
+                                <div class="form-group ">
+                                    <label class="custom-control-label radio-inline" for="status">Status</label>
+                                    <!-- <input id="status" type="text" class="form-control"  name="status" formControlName="status" >  -->
+                                    <select name="status" id="status" class="form-control"  name="status" formControlName="status">
+                                        <option value="">Status</option>
+                                        <option value="PENDING">Pending</option>
+                                        <option value="SUCCESS">Success</option>
+                                        <option value="DECLINE">Decline</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12 px-1">
+                                <div class="form-group ">
+                                    <label class="custom-control-label radio-inline" for="balance">Balance</label>
+                                    <input id="balance" type="text" class="form-control"  name="balance" formControlName="balance" placeholder="optional"> 
+                                </div>
+                            </div>
+                            <div class="col-md-12 px-1">
+                                <div class="form-group ">
+                                    <label class="custom-control-label radio-inline" for="wallet">Wallet Id</label>
+                                    <input id="wallet" type="text" class="form-control"  name="wallet" formControlName="wallet" placeholder="optional"> 
+                                </div>
+                            </div>
+                            <div class="col-md-12 px-1">
+                                <div class="form-group ">
+                                    <label class="custom-control-label radio-inline" for="coverage">Coverage</label>
+                                    <input id="coverage" type="text" class="form-control"  name="coverage" formControlName="coverage" placeholder="optional"> 
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <button type="submit" class="btn btn-block btn-primary" [disabled]="!updateForm.valid || loading">Edit
+                                    <img *ngIf="loading" class="pl-3"
+                                    src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+    
+                </div>
+            </div>
+        </div>
+    </div>

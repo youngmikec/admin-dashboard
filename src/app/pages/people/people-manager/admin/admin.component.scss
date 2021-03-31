@@ -1,0 +1,19 @@
+#queryButton {
+    margin-top: 2px;
+   }
+
+   .spanning {
+    display: block;
+    width: 100px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .spanning200 {
+    display: block;
+    width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
